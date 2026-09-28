@@ -1,0 +1,428 @@
+/* =========================================================
+   Variables: cambia estos valores para adaptar la plantilla
+   a los colores de otro negocio.
+   ========================================================= */
+:root {
+    --color-primario: #6f4e37;
+    --color-primario-oscuro: #4b3325;
+    --color-acento: #e0a458;
+    --color-fondo: #fffaf4;
+    --color-fondo-alterno: #f3e9dc;
+    --color-texto: #2b2118;
+    --color-texto-suave: #6b5b4e;
+    --color-error: #b3261e;
+    --color-exito: #2e7d32;
+    --radio: 12px;
+    --sombra: 0 6px 20px rgba(43, 33, 24, 0.1);
+    --fuente: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --ancho-max: 1100px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuente);
+    line-height: 1.6;
+    color: var(--color-texto);
+    background: var(--color-fondo);
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin: 0 0 0.5em;
+}
+
+a {
+    color: var(--color-primario);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.contenedor--angosto {
+    max-width: 640px;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--color-primario);
+    border-radius: 999px;
+    background: var(--color-primario);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    background: var(--color-primario-oscuro);
+    transform: translateY(-2px);
+}
+
+.boton--claro {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+.boton--claro:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.boton--pequeno {
+    padding: 0.4rem 1rem;
+}
+
+.boton--ancho {
+    width: 100%;
+}
+
+/* ---------- Encabezado y menú ---------- */
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-fondo);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.encabezado__barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--color-primario-oscuro);
+}
+
+.menu-boton {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.menu-boton span {
+    width: 24px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--color-texto);
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--color-fondo);
+    box-shadow: var(--sombra);
+}
+
+.menu.abierto {
+    display: flex;
+}
+
+.menu a:not(.boton) {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+}
+
+/* ---------- Portada ---------- */
+.portada {
+    padding: 5rem 0;
+    color: #fff;
+    background:
+        linear-gradient(135deg, rgba(75, 51, 37, 0.92), rgba(111, 78, 55, 0.85)),
+        radial-gradient(circle at 80% 20%, var(--color-acento), transparent 50%);
+}
+
+.portada h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    max-width: 16ch;
+}
+
+.portada__texto {
+    max-width: 50ch;
+    font-size: 1.125rem;
+    opacity: 0.95;
+}
+
+.portada__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Sobre el fondo oscuro, el botón principal usa el color de acento para resaltar */
+.portada .boton:not(.boton--claro) {
+    background: var(--color-acento);
+    border-color: var(--color-acento);
+    color: var(--color-texto);
+}
+
+.portada .boton:not(.boton--claro):hover {
+    background: #f0b872;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin: 0 0 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: var(--color-acento);
+    color: var(--color-texto);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+    padding: 4rem 0;
+}
+
+.seccion--alterna {
+    background: var(--color-fondo-alterno);
+}
+
+.seccion__titulo {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    text-align: center;
+    color: var(--color-primario-oscuro);
+}
+
+.seccion__titulo--izquierda {
+    text-align: left;
+}
+
+.seccion__subtitulo {
+    margin: 0 0 2.5rem;
+    text-align: center;
+    color: var(--color-texto-suave);
+}
+
+/* ---------- Tarjetas de productos ---------- */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta {
+    padding: 1.5rem;
+    border-radius: var(--radio);
+    background: #fff;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+.tarjeta__icono {
+    font-size: 2.5rem;
+}
+
+.tarjeta p {
+    color: var(--color-texto-suave);
+}
+
+.tarjeta__precio {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primario) !important;
+}
+
+/* ---------- Dos columnas ---------- */
+.dos-columnas {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.lista-ventajas {
+    padding-left: 1.25rem;
+}
+
+.lista-ventajas li::marker {
+    content: "✔  ";
+    color: var(--color-primario);
+}
+
+.imagen-decorativa,
+.mapa {
+    min-height: 260px;
+    border-radius: var(--radio);
+    background:
+        repeating-linear-gradient(45deg, transparent 0 14px, rgba(111, 78, 55, 0.08) 14px 28px),
+        var(--color-fondo);
+    border: 2px dashed rgba(111, 78, 55, 0.35);
+}
+
+.mapa {
+    display: grid;
+    place-items: center;
+    min-height: 200px;
+    color: var(--color-texto-suave);
+}
+
+/* ---------- Horario ---------- */
+.horario {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horario th,
+.horario td {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.horario td {
+    text-align: right;
+    font-weight: 600;
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+    padding: 2rem;
+    border-radius: var(--radio);
+    background: #fff;
+    box-shadow: var(--sombra);
+}
+
+.campo {
+    margin-bottom: 1.25rem;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbbba9;
+    border-radius: 8px;
+    font: inherit;
+    background: var(--color-fondo);
+}
+
+.campo--invalido input,
+.campo--invalido textarea {
+    border-color: var(--color-error);
+}
+
+.campo__error {
+    display: block;
+    min-height: 1.2em;
+    color: var(--color-error);
+}
+
+.formulario__estado {
+    margin: 1rem 0 0;
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-exito);
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #f3e9dc;
+    background: var(--color-primario-oscuro);
+}
+
+.pie a {
+    color: var(--color-acento);
+}
+
+.pie p {
+    margin: 0.25rem 0;
+}
+
+/* =========================================================
+   Pantallas medianas y grandes (tablet y escritorio)
+   ========================================================= */
+@media (min-width: 768px) {
+    .menu-boton {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.75rem;
+        padding: 0;
+        box-shadow: none;
+        background: none;
+    }
+
+    .portada {
+        padding: 7rem 0;
+    }
+
+    .dos-columnas {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Respeta a quien prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}
