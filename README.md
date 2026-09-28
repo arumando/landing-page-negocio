@@ -4,7 +4,7 @@ Plantilla de **página web de una sola página** para un negocio local (cafeter�
 
 > Proyecto de práctica personal. "Café Montaña" es un **negocio ficticio**; textos, precios y dirección son de ejemplo.
 
-🔗 **Demo en línea:** [PENDIENTE: enlace de GitHub Pages cuando lo actives]
+🔗 **Demo en línea:** https://arumando.github.io/landing-page-negocio/
 
 ## ✨ Características
 
