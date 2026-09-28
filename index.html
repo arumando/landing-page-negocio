@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plantilla de página web para una cafetería local. Negocio ficticio de demostración.">
+    <title>Café Montaña | Plantilla de landing page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <div class="contenedor encabezado__barra">
+            <a href="#inicio" class="logo">☕ Café Montaña</a>
+
+            <button class="menu-boton" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="menu" class="menu">
+                <a href="#productos">Productos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#horario">Horario</a>
+                <a href="#contacto" class="boton boton--pequeno">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="portada">
+            <div class="contenedor portada__contenido">
+                <p class="etiqueta">Cafetería de barrio</p>
+                <h1>Café de altura, preparado con calma</h1>
+                <p class="portada__texto">
+                    Bebidas calientes y frías, pan del día y un lugar tranquilo para trabajar o platicar.
+                </p>
+                <div class="portada__acciones">
+                    <a href="#productos" class="boton">Ver productos</a>
+                    <a href="#contacto" class="boton boton--claro">Hacer un pedido</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="seccion">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Nuestros productos</h2>
+                <p class="seccion__subtitulo">Precios de ejemplo para la plantilla.</p>
+
+                <div class="tarjetas">
+                    <article class="tarjeta">
+                        <div class="tarjeta__icono" aria-hidden="true">☕</div>
+                        <h3>Café americano</h3>
+                        <p>Café de grano recién molido, preparado en cafetera de goteo.</p>
+                        <p class="tarjeta__precio">$35</p>
+                    </article>
+                    <article class="tarjeta">
+                        <div class="tarjeta__icono" aria-hidden="true">🥛</div>
+                        <h3>Capuchino</h3>
+                        <p>Espresso con leche vaporizada y espuma cremosa.</p>
+                        <p class="tarjeta__precio">$48</p>
+                    </article>
+                    <article class="tarjeta">
+                        <div class="tarjeta__icono" aria-hidden="true">🍫</div>
+                        <h3>Chocolate de agua</h3>
+                        <p>Chocolate de mesa batido al estilo tradicional.</p>
+                        <p class="tarjeta__precio">$40</p>
+                    </article>
+                    <article class="tarjeta">
+                        <div class="tarjeta__icono" aria-hidden="true">🥐</div>
+                        <h3>Pan del día</h3>
+                        <p>Pan dulce horneado cada mañana. Pregunta por la variedad.</p>
+                        <p class="tarjeta__precio">$18</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="seccion seccion--alterna">
+            <div class="contenedor dos-columnas">
+                <div>
+                    <h2 class="seccion__titulo seccion__titulo--izquierda">Sobre nosotros</h2>
+                    <p>
+                        Este es un espacio para contar la historia del negocio: cómo empezó,
+                        qué lo hace diferente y qué puede esperar el cliente al visitarlo.
+                    </p>
+                    <ul class="lista-ventajas">
+                        <li>Ingredientes de productores locales</li>
+                        <li>Wi-Fi y enchufes en todas las mesas</li>
+                        <li>Pedidos para llevar</li>
+                    </ul>
+                </div>
+                <div class="imagen-decorativa" role="img" aria-label="Espacio para una fotografía del local"></div>
+            </div>
+        </section>
+
+        <section id="horario" class="seccion">
+            <div class="contenedor dos-columnas">
+                <div>
+                    <h2 class="seccion__titulo seccion__titulo--izquierda">Horario</h2>
+                    <table class="horario">
+                        <tbody>
+                            <tr><th scope="row">Lunes a viernes</th><td>8:00 – 20:00</td></tr>
+                            <tr><th scope="row">Sábado</th><td>9:00 – 21:00</td></tr>
+                            <tr><th scope="row">Domingo</th><td>9:00 – 15:00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h2 class="seccion__titulo seccion__titulo--izquierda">Ubicación</h2>
+                    <p>Calle Ejemplo #123, Colonia Centro.</p>
+                    <div class="mapa" role="img" aria-label="Espacio para un mapa de Google Maps">
+                        <span>Aquí va el mapa del negocio</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion seccion--alterna">
+            <div class="contenedor contenedor--angosto">
+                <h2 class="seccion__titulo">Contacto y pedidos</h2>
+                <p class="seccion__subtitulo">Déjanos tus datos y te respondemos a la brevedad.</p>
+
+                <form id="formulario" class="formulario" novalidate>
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" required minlength="3">
+                        <small class="campo__error" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" required>
+                        <small class="campo__error" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required minlength="10"></textarea>
+                        <small class="campo__error" aria-live="polite"></small>
+                    </div>
+                    <button type="submit" class="boton boton--ancho">Enviar mensaje</button>
+                    <p id="formulario-estado" class="formulario__estado" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>© <span id="anio"></span> Café Montaña · Negocio ficticio: plantilla de demostración.</p>
+            <p>Diseño y desarrollo: <a href="https://github.com/arumando">José Armando García Bandera</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
